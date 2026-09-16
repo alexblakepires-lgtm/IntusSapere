@@ -1,0 +1,9 @@
+:{$PORT:80}
+
+root * /srv
+file_server
+encode gzip
+
+handle_errors {
+	respond "Not found" 404
+}

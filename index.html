@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intus Sapere</title>
+<meta name="description" content="Intus Sapere is a small company building careful tools for homeopathic practice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#E9EBE4;
+    --ground-lift:#F2F3EE;
+    --ink:#1F2A22;
+    --ink-soft:#57645B;
+    --rule:#C7CCC0;
+    --accent:#6E3F4B;
+    --focus:#6E3F4B;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#161B17;
+      --ground-lift:#1D241E;
+      --ink:#E3E8DD;
+      --ink-soft:#93A094;
+      --rule:#333D35;
+      --accent:#C7909C;
+      --focus:#C7909C;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#161B17;
+    --ground-lift:#1D241E;
+    --ink:#E3E8DD;
+    --ink-soft:#93A094;
+    --rule:#333D35;
+    --accent:#C7909C;
+    --focus:#C7909C;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Karla",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;}
+  a{color:inherit;}
+  a:focus-visible,
+  button:focus-visible{
+    outline:2px solid var(--focus);
+    outline-offset:3px;
+    border-radius:1px;
+  }
+
+  .shell{
+    max-width:46rem;
+    margin:0 auto;
+    padding:clamp(2.5rem,7vw,5.5rem) clamp(1.5rem,6vw,3rem) 4rem;
+  }
+
+  /* ---- hero ---- */
+  .mark{
+    font-family:"Instrument Serif",Georgia,"Times New Roman",serif;
+    font-weight:400;
+    line-height:.92;
+    letter-spacing:-0.015em;
+    font-size:clamp(3.4rem,13vw,7rem);
+    margin:0;
+  }
+  .mark span{display:block;}
+  .mark .b{padding-left:.09em;}
+
+  .gloss{
+    font-size:.95rem;
+    color:var(--ink-soft);
+    margin:1.6rem 0 0;
+    max-width:30rem;
+  }
+  .gloss i{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--accent);
+    letter-spacing:.005em;
+  }
+
+  .lede{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(1.35rem,3.4vw,1.75rem);
+    line-height:1.45;
+    margin:2.75rem 0 0;
+    max-width:32rem;
+  }
+
+  hr.rule{
+    border:0;
+    border-top:1px solid var(--rule);
+    margin:clamp(3rem,8vw,4.5rem) 0 clamp(1.75rem,4vw,2.5rem);
+  }
+
+  h2{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-weight:400;
+    font-size:1.5rem;
+    line-height:1.3;
+    margin:0 0 .9rem;
+  }
+  p{max-width:34rem;margin:0 0 1.15rem;}
+  p:last-child{margin-bottom:0;}
+  .soft{color:var(--ink-soft);}
+
+  /* ---- people ---- */
+  .people{
+    display:grid;
+    gap:1.75rem;
+    margin-top:.25rem;
+  }
+  @media (min-width:34rem){
+    .people{grid-template-columns:1fr 1fr;gap:2.25rem;}
+  }
+  .person .name{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:1.2rem;
+    display:block;
+    margin-bottom:.25rem;
+  }
+  .person p{font-size:.95rem;color:var(--ink-soft);margin:0;}
+
+  /* ---- contact ---- */
+  .mailto{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(1.35rem,4.2vw,1.9rem);
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:.12em;
+    display:inline-block;
+    transition:border-color .18s ease;
+    word-break:break-word;
+  }
+  .mailto:hover{border-bottom-color:var(--accent);}
+
+  footer{
+    margin-top:clamp(3.5rem,9vw,5rem);
+    padding-top:1.5rem;
+    border-top:1px solid var(--rule);
+    font-size:.85rem;
+    color:var(--ink-soft);
+  }
+  footer p{margin:0;}
+
+  /* ---- one page-load settle ---- */
+  .reveal{opacity:0;transform:translateY(6px);animation:settle .9s cubic-bezier(.2,.7,.3,1) forwards;}
+  .reveal.d1{animation-delay:.12s;}
+  .reveal.d2{animation-delay:.24s;}
+  @keyframes settle{to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{animation:none;opacity:1;transform:none;}
+    *{transition-duration:.01ms !important;}
+  }
+</style>
+</head>
+<body>
+<main class="shell">
+
+  <h1 class="mark reveal"><span>intus</span><span class="b">sapere</span></h1>
+
+  <p class="gloss reveal d1">Latin. <i>To know from within.</i> The phrase sits beside Hahnemann's <i>aude sapere</i>, dare to know, which opens the Organon.</p>
+
+  <p class="lede reveal d2">We build careful tools for homeopathic practice, made with practitioners rather than at them.</p>
+
+  <hr class="rule">
+
+  <section>
+    <h2>What we're making</h2>
+    <p>A conversational guide to homeopathy. It listens, recognizes patterns, and helps organize what is spoken, pointing inquiry toward the remedy that fits.</p>
+    <p>It teaches rather than prescribes. One version is being built for practitioners and their students, another for anyone curious enough to ask a first question. Both are in development now.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Trying it early</h2>
+    <p>A private beta is running with a small group of practitioners. We are keeping it small on purpose, because the clinical standard matters more to us than the headcount.</p>
+    <p class="soft">If you teach, practice, or study homeopathy and want to see it, write to us and we will tell you where it stands.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Who we are</h2>
+    <div class="people">
+      <div class="person">
+        <span class="name">Alexandre Pires</span>
+        <p>Builds the thing. Nutritional therapy practitioner, harm reduction background, writes the code.</p>
+      </div>
+      <div class="person">
+        <span class="name">Lua Maia</span>
+        <p>Classical homeopath. Holds the clinical standard and decides what the work is allowed to say.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Get in touch</h2>
+    <p class="soft">For practitioners, schools, and anyone who wants to know more.</p>
+    <a class="mailto" href="mailto:hello@intussapere.com">hello@intussapere.com</a>
+  </section>
+
+  <footer>
+    <p>Intus Sapere LLC, registered in Oregon.</p>
+  </footer>
+
+</main>
+</body>
+</html>
